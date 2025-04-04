@@ -11,8 +11,8 @@ JavaSis is a lightweight, statically-typed language designed to explore clean sy
 ## Tools & Technologies
 - Language: Java 17
 - Parser Generator: ANTLR v4
-- Build Tool: Gradle (or Maven if preferred)
-- IDE: IntelliJ / VSCode (optional)
+- Build Tool: Gradle 
+- IDE: IntelliJ / VSCode 
 
 ## Planned Language Features
 - Primitives: `int`, `float`, `bool`, `string`
