@@ -41,16 +41,20 @@ java -version
 
 ## Compile the Project
 From the root directory of the project, run:
+
 Windows:
 javac -cp ".;lib/antlr-4.13.1-complete.jar" src/antlr/*.java src/KiddoMain.java
 
 Use : instead of ; if you're on macOS/Linux:
+
 javac -cp ".:lib/antlr-4.13.1-complete.jar" src/antlr/*.java src/KiddoMain.java
 
 
 ## Run the Parser
 Run with a sample program like:
+
 java -cp ".;lib/antlr-4.13.1-complete.jar;src" KiddoMain data/test1.kiddo
 
 or on macOS/Linux:
+
 java -cp ".:lib/antlr-4.13.1-complete.jar:src" KiddoMain data/test1.kiddo
