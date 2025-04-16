@@ -55,3 +55,42 @@ Milestone 2 :
     - Implementation of a lexer according to the grammar of the project
     - Testing the sample codes with the lexer
     - Wrote sample programs
+
+Plans for Milestone 3 and Milestone 4:
+
+Milestone 3 :
+
+1. Shreya Prakash
+    - Make changes to grammar to include more operations if possible
+    - Write more sample programs 
+    - Work on testing the project
+    - Implement the interpreter
+
+2. Uma Maheswar Reddy Nallamilli
+    - Implement the interpreter
+    - Make changes to parse tree and parser rules for more clarity if possible
+    - Add more test programs
+
+3. Venkata Srinivas Babu Oguri
+    - Make changes to grammar to include more operations if possible
+    - Write sample programs to check the interpreter
+    - Implement the interpreter
+
+4. Parth Rakesh Patel
+    - Make changes to grammar to include more operations if possible
+    - Write sample programs to check the interpreter
+    - Implement the interpreter
+
+Milestone 4 :
+
+1. Shreya Prakash
+    - Work on the presentation activities - PPT, Video, Documentation
+
+2. Uma Maheswar Reddy Nallamilli
+    - Work on the presentation activities - PPT, Video, Documentation
+
+3. Venkata Srinivas Babu Oguri
+    - Work on the presentation activities - PPT, Video, Documentation
+
+4. Parth Rakesh Patel
+    - Work on the presentation activities - PPT, Video, Documentation
