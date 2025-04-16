@@ -1,0 +1,7 @@
+set x to 7;
+
+when (x > 5) {
+  say "Greater than 5";
+} otherwise {
+  say "Less or equal to 5";
+}
