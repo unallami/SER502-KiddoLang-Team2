@@ -1,3 +1,27 @@
+grammar KiddoLang;
+
+// ======================
+//     Parser Rules
+// ======================
+
+program         : statement+ ;
+
+statement
+    : assignment
+    | printStatement
+    | ifStatement
+    | loopStatement
+    | ternaryExpr ';'
+    ;
+
+assignment      : SET ID TO expr SEMI ;
+
+printStatement  : SAY expr SEMI ;
+
+ifStatement     : WHEN LPAREN expr RPAREN block (OTHERWISE block)? ;
+
+loopStatement   : forLoop | whileLoop ;
+
 // ======================
 //     Lexer Rules
 // ======================
@@ -10,7 +34,6 @@ WHEN            : 'when' ;
 OTHERWISE       : 'otherwise' ;
 COUNT           : 'count' ;
 FROM            : 'from' ;
-TO              : 'to' ;
 REPEAT          : 'repeat' ;
 UNTIL           : 'until' ;
 AND             : 'and' ;
@@ -44,3 +67,4 @@ STRING          : '"' (~["\\] | '\\' .)* '"' ;
 // --- Whitespace & Comments ---
 WS              : [ \t\r\n]+ -> skip ;
 COMMENT         : '//' ~[\r\n]* -> skip ;
+
