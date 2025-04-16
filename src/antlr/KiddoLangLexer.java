@@ -1,4 +1,5 @@
-// Generated from /Users/shreyaprakash/SER502-KiddoLang-Team2/src/KiddoLang.g4 by ANTLR 4.13.1
+package antlr;
+
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
