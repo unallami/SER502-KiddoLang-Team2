@@ -53,7 +53,7 @@ javac -cp ".:lib/antlr-4.13.1-complete.jar" src/antlr/*.java src/KiddoMain.java
 ## Run the Parser
 Run with a sample program like:
 
-java -cp ".;lib/antlr-4.13.1-complete.jar;src" KiddoMain data/test1.kiddo
+java -cp ".;lib/antlr4-runtime-4.13.1.jar;src" KiddoMain data/test1.kiddo
 
 or on macOS/Linux:
 
