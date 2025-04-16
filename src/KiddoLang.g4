@@ -1,6 +1,7 @@
-grammar KiddoLang;
+// ======================
+//     Lexer Rules
+// ======================
 
-// Lexer Rules
 // --- Keywords ---
 SET             : 'set' ;
 TO              : 'to' ;
@@ -34,10 +35,12 @@ LBRACE          : '{' ;
 RBRACE          : '}' ;
 SEMI            : ';' ;
 
+// --- Identifiers & Literals ---
+ID              : [a-zA-Z_][a-zA-Z0-9_]* ;
+INT             : [0-9]+ ;
+FLOAT           : [0-9]+ '.' [0-9]+ ;
+STRING          : '"' (~["\\] | '\\' .)* '"' ;
 
-// --- Literals ---
-NUMBER      : [0-9]+ ('.' [0-9]+)? ;
-STRING      : '"' (~["\\] | '\\' .)*? '"' ;
-
-// --- Identifiers ---
-ID          : [a-zA-Z_][a-zA-Z0-9_]* ;
+// --- Whitespace & Comments ---
+WS              : [ \t\r\n]+ -> skip ;
+COMMENT         : '//' ~[\r\n]* -> skip ;
