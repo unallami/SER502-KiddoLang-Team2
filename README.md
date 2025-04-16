@@ -57,4 +57,4 @@ java -cp ".;lib/antlr4-runtime-4.13.1.jar;src" KiddoMain data/test1.kiddo
 
 or on macOS/Linux:
 
-java -cp ".:lib/antlr4-runtime-4.13.1-.jar:src" KiddoMain data/test1.kiddo
+java -cp ".:lib/antlr4-runtime-4.13.1.jar:src" KiddoMain data/test1.kiddo
