@@ -1,0 +1,6 @@
+set i to 0;
+
+repeat until (i > 2) {
+  say i;
+  set i to i + 1;
+}

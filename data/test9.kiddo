@@ -1,0 +1,11 @@
+set text to "";
+say text;
+
+set big to 1000000000;
+say big;
+
+set x to (5 + 3) * 2;
+say x;
+
+set pi to 3.14;
+say pi == 3.14;

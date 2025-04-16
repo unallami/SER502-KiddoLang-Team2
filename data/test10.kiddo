@@ -1,0 +1,15 @@
+set i to 1;
+
+repeat until (i > 2) {
+  count from 1 to 2 {
+    say "Nested!";
+  }
+
+  when (i == 1) {
+    say "First pass";
+  } otherwise {
+    say "Second pass";
+  }
+
+  set i to i + 1;
+}
