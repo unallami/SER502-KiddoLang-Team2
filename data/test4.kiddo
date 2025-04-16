@@ -1,0 +1,8 @@
+test4.kiddo
+
+set p to yes;
+set q to no;
+
+say p and q;
+say p or q;
+say not p;

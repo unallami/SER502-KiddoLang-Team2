@@ -1,0 +1,9 @@
+test3.kiddo
+
+set a to 10;
+set b to 4;
+
+say a + b;
+say a - b;
+say a * b;
+say a / b;
