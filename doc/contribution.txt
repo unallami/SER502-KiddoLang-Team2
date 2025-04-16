@@ -1,0 +1,57 @@
+SER 502 Contribution - Group 02
+
+Members -
+1. Shreya Prakash
+2. Uma Maheswar Reddy Nallamilli
+3. Venkata Srinivas Babu Oguri
+4. Parth Rakesh Patel
+
+Milestone 1 :
+
+1. Shreya Prakash
+      - Explored more about multiple tools such as ANTLR, BISON, FLEX
+      - discussing the scope of the project
+      - Setting up a project in git
+
+2. Uma Maheswar Reddy Nallamilli
+      - Explored more about multiple tools such as ANTLR, BISON, FLEX
+      - discussing the scope of the project
+      - Setting up a project in git
+
+3. Venkata Srinivas Babu Oguri
+      - Explored more about multiple tools such as ANTLR, BISON, FLEX
+      - discussing the scope of the project
+      - Setting up a project in git
+      
+4. Parth Rakesh Patel
+      - Explored more about multiple tools such as ANTLR, BISON, FLEX
+      - discussing the scope of the project
+      - Setting up a project in git
+      
+Milestone 2 :
+
+1. Shreya Prakash
+    - Discussed and implemented grammar in EBNF form
+    - Wrote sample programs
+    - Construction of a parse tree based on the output of the tokenizer
+    - verified sample programs with the grammar
+    - Implementation of a parser according to the grammar of the project
+
+2. Uma Maheswar Reddy Nallamilli
+    - Discussed and implemented grammar in EBNF form
+    - Implementation of a parser according to the grammar of the project
+    - Testing the sample codes with the parser
+    - Wrote sample programs
+    - added program to read the input and tokenize and parse
+
+3. Venkata Srinivas Babu Oguri
+    - Discussed and implemented grammar in EBNF form
+    - Wrote sample programs
+    - Testing the sample codes with the lexer
+    - verified sample programs with the grammar
+
+4. Parth Rakesh Patel
+    - Discussed and implemented grammar in EBNF form
+    - Implementation of a lexer according to the grammar of the project
+    - Testing the sample codes with the lexer
+    - Wrote sample programs
