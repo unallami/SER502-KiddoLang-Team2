@@ -1,0 +1,4 @@
+set x to 5;
+set y to 10;
+set z to 3.14;
+set name to "Alice";
