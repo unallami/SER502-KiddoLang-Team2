@@ -1,0 +1,5 @@
+
+set temp to 30;
+when ((temp > 20 ? yes : no)) {
+  say "It's warm";
+}

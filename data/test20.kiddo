@@ -1,0 +1,5 @@
+
+set name to "Score: ";
+set score to 100;
+
+say name + score;

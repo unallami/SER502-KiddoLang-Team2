@@ -1,0 +1,6 @@
+
+set x to 0.1;
+set y to 0.2;
+set z to x + y;
+
+say z == 0.3;

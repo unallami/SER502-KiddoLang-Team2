@@ -1,0 +1,4 @@
+
+set x to 10;
+set message to x < 5 ? "Low" : x > 15 ? "High" : "Medium";
+say message;
