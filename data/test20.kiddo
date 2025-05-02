@@ -1,4 +1,4 @@
-
+// Negative Test Case
 set name to "Score: ";
 set score to 100;
 
