@@ -1,7 +1,7 @@
 set msg to "Hello, Kiddo!";
-set count to 3;
+set counter to 3;
 set ok to yes;
 
 say msg;
-say count;
+say counter;
 say ok;
