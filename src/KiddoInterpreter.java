@@ -66,6 +66,24 @@ public class KiddoInterpreter {
         Object value = evaluateExpr(ctx.expr());
         System.out.println(value);
     }
+
+    // Handles if-else conditions
+    private void handleIf(KiddoLangParser.IfStatementContext ctx) {
+        Object condVal = evaluateExpr(ctx.expr());
+        if (!(condVal instanceof Boolean)) {
+            throw new RuntimeException("Condition must evaluate to boolean");
+        }
+        boolean cond = (Boolean) condVal;
+        if (cond) interpret(ctx.block(0));
+        else if (ctx.OTHERWISE() != null) interpret(ctx.block(1));
+    }
+
+    // Handles both for and while loops
+    private void handleLoop(KiddoLangParser.LoopStatementContext ctx) {
+        if (ctx.forLoop() != null) handleFor(ctx.forLoop());
+        else if (ctx.whileLoop() != null) handleWhile(ctx.whileLoop());
+    }
+
     // Handles count from x to y
     private void handleFor(KiddoLangParser.ForLoopContext ctx) {
         Object startVal = evaluateExpr(ctx.expr(0));
