@@ -1,6 +1,0 @@
-set temp to 30;
-set isWarm to temp > 20 ? yes : no;
-
-when (isWarm) {
-  say "It's warm";
-}

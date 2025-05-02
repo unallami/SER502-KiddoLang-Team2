@@ -1,3 +1,4 @@
+
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import antlr.KiddoLangLexer;
@@ -8,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class KiddoInterpreter {
+
     // Stores variables and their values
     private final Map<String, Object> memory = new HashMap<>();
 
@@ -38,13 +40,18 @@ public class KiddoInterpreter {
             }
         }
     }
+
     // Handles each kind of statement
     private void handleStatement(KiddoLangParser.StatementContext ctx) {
-        if (ctx.assignment() != null) handleAssignment(ctx.assignment());
-        else if (ctx.printStatement() != null) handlePrint(ctx.printStatement());
-        else if (ctx.ifStatement() != null) handleIf(ctx.ifStatement());
-        else if (ctx.loopStatement() != null) handleLoop(ctx.loopStatement());
-        else if (ctx.ternaryExpr() != null) {
+        if (ctx.assignment() != null) {
+            handleAssignment(ctx.assignment());
+        } else if (ctx.printStatement() != null) {
+            handlePrint(ctx.printStatement());
+        } else if (ctx.ifStatement() != null) {
+            handleIf(ctx.ifStatement());
+        } else if (ctx.loopStatement() != null) {
+            handleLoop(ctx.loopStatement());
+        } else if (ctx.ternaryExpr() != null) {
             Object value = handleTernary(ctx.ternaryExpr());
             System.out.println(value);
         }
@@ -74,14 +81,20 @@ public class KiddoInterpreter {
             throw new RuntimeException("Condition must evaluate to boolean");
         }
         boolean cond = (Boolean) condVal;
-        if (cond) interpret(ctx.block(0));
-        else if (ctx.OTHERWISE() != null) interpret(ctx.block(1));
+        if (cond) {
+            interpret(ctx.block(0));
+        } else if (ctx.OTHERWISE() != null) {
+            interpret(ctx.block(1));
+        }
     }
 
     // Handles both for and while loops
     private void handleLoop(KiddoLangParser.LoopStatementContext ctx) {
-        if (ctx.forLoop() != null) handleFor(ctx.forLoop());
-        else if (ctx.whileLoop() != null) handleWhile(ctx.whileLoop());
+        if (ctx.forLoop() != null) {
+            handleFor(ctx.forLoop());
+        } else if (ctx.whileLoop() != null) {
+            handleWhile(ctx.whileLoop());
+        }
     }
 
     // Handles count from x to y
@@ -107,7 +120,9 @@ public class KiddoInterpreter {
                 throw new RuntimeException("While condition must be boolean");
             }
             boolean cond = (Boolean) condVal;
-            if (cond) break;
+            if (cond) {
+                break;
+            }
             interpret(ctx.block());
         }
     }
@@ -123,12 +138,24 @@ public class KiddoInterpreter {
 
     // Evaluates an expression and returns its value
     private Object evaluateExpr(KiddoLangParser.ExprContext ctx) {
-        if (ctx.INT() != null) return Integer.parseInt(ctx.INT().getText());
-        if (ctx.FLOAT() != null) return Float.parseFloat(ctx.FLOAT().getText());
-        if (ctx.STRING() != null) return ctx.STRING().getText().replaceAll("^\"|\"$", "");
-        if (ctx.YES() != null) return true;
-        if (ctx.NO() != null) return false;
-        if (ctx.ID() != null) return memory.getOrDefault(ctx.ID().getText(), 0);
+        if (ctx.INT() != null) {
+            return Integer.parseInt(ctx.INT().getText());
+        }
+        if (ctx.FLOAT() != null) {
+            return Float.parseFloat(ctx.FLOAT().getText());
+        }
+        if (ctx.STRING() != null) {
+            return ctx.STRING().getText().replaceAll("^\"|\"$", "");
+        }
+        if (ctx.YES() != null) {
+            return true;
+        }
+        if (ctx.NO() != null) {
+            return false;
+        }
+        if (ctx.ID() != null) {
+            return memory.getOrDefault(ctx.ID().getText(), 0);
+        }
 
         // Handles: not x
         if (ctx.expr().size() == 1 && ctx.NOT() != null) {
@@ -149,25 +176,44 @@ public class KiddoInterpreter {
         Object right = evaluateExpr(ctx.expr(1));
         String op = ctx.getChild(1).getText();
 
-        return switch (op) {
-            case "+" -> toNum(left) + toNum(right);
-            case "-" -> toNum(left) - toNum(right);
-            case "*" -> toNum(left) * toNum(right);
-            case "/" -> toNum(left) / toNum(right);
-            case ">" -> toNum(left) > toNum(right);
-            case "<" -> toNum(left) < toNum(right);
-            case "==" -> left.equals(right);
-            case "and" -> (Boolean) left && (Boolean) right;
-            case "or" -> (Boolean) left || (Boolean) right;
-            default -> throw new RuntimeException("Unknown binary operator: " + op);
-        };
+        switch (op) {
+            case "+":
+                return toNum(left) + toNum(right);
+            case "-":
+                return toNum(left) - toNum(right);
+            case "*":
+                return toNum(left) * toNum(right);
+            case "/":
+                return toNum(left) / toNum(right);
+            case ">":
+                return toNum(left) > toNum(right);
+            case "<":
+                return toNum(left) < toNum(right);
+            case "==":
+                if (left instanceof Number && right instanceof Number) {
+                    return Math.abs(toNum(left) - toNum(right)) < 1e-6;
+                }
+                return left.equals(right);
+            case "and":
+                return (Boolean) left && (Boolean) right;
+            case "or":
+                return (Boolean) left || (Boolean) right;
+            default:
+                throw new RuntimeException("Unknown binary operator: " + op);
+        }
     }
 
     // Converts a number (int/float) to double
     private double toNum(Object val) {
-        if (val instanceof Integer) return ((Integer) val).doubleValue();
-        if (val instanceof Float) return ((Float) val).doubleValue();
-        if (val instanceof Double) return (Double) val;
+        if (val instanceof Integer) {
+            return ((Integer) val).doubleValue();
+        }
+        if (val instanceof Float) {
+            return ((Float) val).doubleValue();
+        }
+        if (val instanceof Double) {
+            return (Double) val;
+        }
         throw new RuntimeException("Expected numeric type, got: " + val);
     }
 }
