@@ -38,7 +38,34 @@ public class KiddoInterpreter {
             }
         }
     }
-    
+    // Handles each kind of statement
+    private void handleStatement(KiddoLangParser.StatementContext ctx) {
+        if (ctx.assignment() != null) handleAssignment(ctx.assignment());
+        else if (ctx.printStatement() != null) handlePrint(ctx.printStatement());
+        else if (ctx.ifStatement() != null) handleIf(ctx.ifStatement());
+        else if (ctx.loopStatement() != null) handleLoop(ctx.loopStatement());
+        else if (ctx.ternaryExpr() != null) {
+            Object value = handleTernary(ctx.ternaryExpr());
+            System.out.println(value);
+        }
+    }
+
+    // Handles variable assignment like: set x to 5;
+    private void handleAssignment(KiddoLangParser.AssignmentContext ctx) {
+        if (ctx.ID() == null || ctx.expr() == null) {
+            System.err.println("Invalid assignment statement.");
+            return;
+        }
+        String id = ctx.ID().getText();
+        Object value = evaluateExpr(ctx.expr());
+        memory.put(id, value);
+    }
+
+    // Handles print statements like: say x;
+    private void handlePrint(KiddoLangParser.PrintStatementContext ctx) {
+        Object value = evaluateExpr(ctx.expr());
+        System.out.println(value);
+    }
     // Handles count from x to y
     private void handleFor(KiddoLangParser.ForLoopContext ctx) {
         Object startVal = evaluateExpr(ctx.expr(0));
