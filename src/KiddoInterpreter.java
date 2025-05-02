@@ -54,6 +54,19 @@ public class KiddoInterpreter {
         }
     }
 
+    // Handles repeat until
+    private void handleWhile(KiddoLangParser.WhileLoopContext ctx) {
+        while (true) {
+            Object condVal = evaluateExpr(ctx.expr());
+            if (!(condVal instanceof Boolean)) {
+                throw new RuntimeException("While condition must be boolean");
+            }
+            boolean cond = (Boolean) condVal;
+            if (cond) break;
+            interpret(ctx.block());
+        }
+    }
+
     // Handles ternary expressions like: cond ? a : b
     private Object handleTernary(KiddoLangParser.TernaryExprContext ctx) {
         Object conditionValue = evaluateExpr(ctx.expr(0));
