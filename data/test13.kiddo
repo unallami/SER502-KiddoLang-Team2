@@ -1,0 +1,7 @@
+set empty to "";
+set zero to 0;
+set nope to no;
+
+say empty;
+say zero;
+say nope;

@@ -1,0 +1,5 @@
+set result to 2 + 3 * 4;
+say result;
+
+set result2 to (2 + 3) * 4;
+say result2;

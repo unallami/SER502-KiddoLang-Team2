@@ -1,0 +1,5 @@
+set quote to "She said, \"Hi!\"";
+set newline to "Line1\\nLine2";
+
+say quote;
+say newline;

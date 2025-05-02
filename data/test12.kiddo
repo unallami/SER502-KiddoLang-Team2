@@ -1,0 +1,6 @@
+set a to yes;
+set b to no;
+set c to yes;
+
+say a and b or c;
+say not a or b;

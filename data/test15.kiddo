@@ -1,0 +1,2 @@
+set value to (((((2 + 3)))) * ((1 + 1)));
+say value;
