@@ -12,7 +12,7 @@
 
 ## Tools and Technologies
 
-We will be using ANTLR as the Lexical analyzer, Parser and since ANTLR supports mutiple languages we will be using Java/Python as our Interpreter(will be decided in the future).
+We will be using ANTLR as the Lexical analyzer, Parser and since ANTLR supports mutiple languages we will be using Java as our Interpreter.
 
 ## Target Platforms
 
@@ -43,11 +43,11 @@ java -version
 From the root directory of the project, run:
 
 Windows:
-javac -cp ".;lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/KiddoMain.java
+javac -cp ".;lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/*.java
 
 Use : instead of ; if you're on macOS/Linux:
 
-javac -cp ".:lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/KiddoMain.java
+javac -cp ".:lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/*.java
 
 
 ## Run the Parser
@@ -58,3 +58,12 @@ java -cp ".;lib/antlr4-runtime-4.13.1.jar;src" KiddoMain data/test1.kiddo
 or on macOS/Linux:
 
 java -cp ".:lib/antlr4-runtime-4.13.1.jar:src" KiddoMain data/test1.kiddo
+
+## Run the interpreter
+Run with a sample program like:
+
+java -cp ".;lib/antlr4-runtime-4.13.1.jar;src" KiddoInterpreter data/test1.kiddo
+
+or on macOS/Linux:
+
+java -cp ".:lib/antlr4-runtime-4.13.1.jar:src" KiddoInterpreter data/test1.kiddo
