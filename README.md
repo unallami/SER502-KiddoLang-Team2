@@ -43,9 +43,10 @@ java -version
 From the root directory of the project, run:
 
 Windows:
+
 javac -cp ".;lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/*.java
 
-Use : instead of ; if you're on macOS/Linux:
+macOS/Linux:
 
 javac -cp ".:lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/*.java
 
@@ -53,17 +54,21 @@ javac -cp ".:lib/antlr4-runtime-4.13.1.jar" src/antlr/*.java src/*.java
 ## Run the Parser
 Run with a sample program like:
 
+Windows:
+
 java -cp ".;lib/antlr4-runtime-4.13.1.jar;src" KiddoMain data/test1.kiddo
 
-or on macOS/Linux:
+macOS/Linux:
 
 java -cp ".:lib/antlr4-runtime-4.13.1.jar:src" KiddoMain data/test1.kiddo
 
 ## Run the interpreter
 Run with a sample program like:
 
+Windows:
+
 java -cp ".;lib/antlr4-runtime-4.13.1.jar;src" KiddoInterpreter data/test1.kiddo
 
-or on macOS/Linux:
+macOS/Linux:
 
 java -cp ".:lib/antlr4-runtime-4.13.1.jar:src" KiddoInterpreter data/test1.kiddo
