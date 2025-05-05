@@ -85,13 +85,17 @@ Milestone 3 :
 Milestone 4 :
 
 1. Shreya Prakash
-    - Work on the presentation activities - PPT, Video, Documentation
+    - Worked on the presentation activities - PPT, Video, Documentation
+    - Worked on testing the project
 
 2. Uma Maheswar Reddy Nallamilli
-    - Work on the presentation activities - PPT, Video, Documentation
+    - Worked on the presentation activities - PPT, Video, Documentation
+    - Worked on testing the project
 
 3. Venkata Srinivas Babu Oguri
-    - Work on the presentation activities - PPT, Video, Documentation
+    - Worked on the presentation activities - PPT, Video, Documentation
+    - Worked on testing the project
 
 4. Parth Rakesh Patel
-    - Work on the presentation activities - PPT, Video, Documentation
+    - Worked on the presentation activities - PPT, Video, Documentation
+    - Worked on testing the project
