@@ -1,3 +1,2 @@
 set score to 80;
-set result to score > 50 ? "Pass" : "Fail";
-say result;
+score > 50 ? "Pass" : "Fail";
